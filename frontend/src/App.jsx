@@ -88,19 +88,17 @@ export default function App() {
       <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 bg-indigo-600 rounded-lg flex items-center justify-center">
-              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-              </svg>
+            <div className="w-9 h-9 bg-amber-500 rounded-lg flex items-center justify-center">
+              <span className="text-white text-lg leading-none">🍯</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Inventory Manager</h1>
-              <p className="text-xs text-gray-500 hidden sm:block">Retail Store Management</p>
+              <h1 className="text-xl font-bold text-gray-900">Golden Hive</h1>
+              <p className="text-xs text-gray-500 hidden sm:block">Honey Company Inventory</p>
             </div>
           </div>
           <button
             onClick={() => setShowAddModal(true)}
-            className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+            className="flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -112,7 +110,7 @@ export default function App() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <StatCard label="Total Products" value={totalProducts} icon="📦" color="bg-blue-50 text-blue-600" />
+          <StatCard label="Total Products" value={totalProducts} icon="🍯" color="bg-amber-50 text-amber-600" />
           <StatCard label="Inventory Value" value={'$' + totalValue.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} icon="💰" color="bg-green-50 text-green-600" />
           <StatCard label="Low Stock" value={lowStock} icon="⚠️" color="bg-yellow-50 text-yellow-600" />
           <StatCard label="Out of Stock" value={outOfStock} icon="🚫" color="bg-red-50 text-red-600" />
@@ -128,13 +126,13 @@ export default function App() {
               placeholder="Search by name, SKU or description..."
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full pl-9 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent"
             />
           </div>
           <select
             value={filterCategory}
             onChange={e => setFilterCategory(e.target.value)}
-            className="px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white"
+            className="px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 bg-white"
           >
             <option value="">All Categories</option>
             {categories.map(c => (

@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const db = require('./db');
 
 const app = express();
@@ -129,6 +130,13 @@ app.delete('/api/products/:id', (req, res) => {
   }
 });
 
+// Serve built React frontend
+const FRONTEND_DIST = path.join(__dirname, '..', '..', 'frontend', 'dist');
+app.use(express.static(FRONTEND_DIST));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(FRONTEND_DIST, 'index.html'));
+});
+
 app.listen(PORT, () => {
-  console.log(`Inventory API running on http://localhost:${PORT}`);
+  console.log(`Golden Hive Inventory running on http://localhost:${PORT}`);
 });

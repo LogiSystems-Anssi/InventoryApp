@@ -1,8 +1,9 @@
 const CATEGORY_COLORS = {
-  Electronics: 'bg-blue-100 text-blue-700',
-  Office: 'bg-purple-100 text-purple-700',
-  Stationery: 'bg-orange-100 text-orange-700',
-  Accessories: 'bg-teal-100 text-teal-700',
+  'Raw Honey': 'bg-amber-100 text-amber-700',
+  'Creamed Honey': 'bg-yellow-100 text-yellow-700',
+  'Infused Honey': 'bg-orange-100 text-orange-700',
+  'Beeswax': 'bg-stone-100 text-stone-700',
+  'Gift Sets': 'bg-pink-100 text-pink-700',
 };
 
 function StockBadge({ quantity }) {
@@ -16,7 +17,7 @@ export default function ProductTable({ products, loading, onEdit, onDelete, onUp
     return (
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
         <div className="flex items-center justify-center py-20">
-          <div className="w-8 h-8 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin" />
+          <div className="w-8 h-8 border-4 border-amber-500 border-t-transparent rounded-full animate-spin" />
         </div>
       </div>
     );
@@ -68,7 +69,7 @@ export default function ProductTable({ products, loading, onEdit, onDelete, onUp
                 <td className="px-4 py-3 text-center">
                   <button
                     onClick={() => onUpdateQuantity(product)}
-                    className="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-gray-100 hover:bg-indigo-100 hover:text-indigo-700 font-semibold transition-colors"
+                    className="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-gray-100 hover:bg-amber-100 hover:text-amber-700 font-semibold transition-colors"
                     title="Click to update quantity"
                   >
                     {product.quantity}
@@ -84,7 +85,7 @@ export default function ProductTable({ products, loading, onEdit, onDelete, onUp
                   <div className="flex items-center justify-end gap-2">
                     <button
                       onClick={() => onEdit(product)}
-                      className="p-1.5 rounded-lg text-gray-400 hover:text-indigo-600 hover:bg-indigo-50 transition-colors"
+                      className="p-1.5 rounded-lg text-gray-400 hover:text-amber-600 hover:bg-amber-50 transition-colors"
                       title="Edit product"
                     >
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
